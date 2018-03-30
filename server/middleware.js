@@ -15,6 +15,7 @@ router.post('/errorMsg/', function(req, res) {
 
 	let url = error.scriptURI; // 压缩文件路径
 
+	console.log('error',error);
 	if (url) {
 		let fileUrl = url.slice(url.indexOf('client/')) + '.map'; // map文件路径
 
@@ -49,6 +50,8 @@ router.post('/errorMsg/', function(req, res) {
 			}).then(function(json) {
 				res.json(json);
 			});*/
+		},function(e){
+			console.error(e);
 		})
 	}
 });
